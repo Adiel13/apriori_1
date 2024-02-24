@@ -50,7 +50,7 @@ data2[473, "genero"] <- "female"
 data2[487, "genero"] <- "male"
 
 data2
-
+data3
 data3 <- data2[,c(1,2,3,5,6,7,8,11)]
 data3$genero <- ifelse(data3$genero == "male", 1, 0)
 
@@ -92,6 +92,6 @@ data5 <-subset(data3, semestre==2 & genero==0)
 data5 <-data5[,-2]
 data5 <-data5[,-6]
 
-regla <- apriori(data5, parameter = list(support=0.1, confidence =0.5))
-inspect(regla[0:100])
+regla <- apriori(data5, parameter = list(support=1, confidence =0.5))
+inspect(regla)
 inspect(regla[200:300])
